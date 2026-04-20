@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-body: "Lato", sans-serif;
+  --font-tagline: "Georgia", serif;
+
+  --color-primary: #1B4332;
+  --color-secondary: #D4A017;
+  --color-accent: #F9EDD0;
+  --color-surface: #FFFFFF;
+  --color-text-dark: #1A1A1A;
+  --color-text-muted: #6B6B6B;
+  --color-whatsapp: #25D366;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-accent text-text-dark;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-text-dark;
+  }
+}
+
+.font-tagline-caps {
+  font-family: var(--font-tagline);
+  font-variant: small-caps;
+  letter-spacing: 0.15em;
+}
+
+.gold-border {
+  border: 1px solid var(--color-secondary);
+}
+
+.gold-border-thick {
+  border: 10px solid var(--color-secondary);
+}
+
+.hero-pattern {
+  background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M20 20c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm-20 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z" fill="%231B4332" fill-opacity="0.05" fill-rule="evenodd"/%3E%3C/svg%3E');
+}
+
+@keyframes pulse-whatsapp {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-pulse-whatsapp {
+  animation: pulse-whatsapp 2s infinite;
+}
